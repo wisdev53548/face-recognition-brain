@@ -66,16 +66,19 @@ class App extends Component {
     ); 
   }
 
+  onRouteChange = route => {
+    this.setState({route: route})
+  }
+
   render() {
     return (
       <div className="App">
         {/*<Particles className='particles'
           params={particlesOptions}
         />*/}
-        <Navigation />
-        {/*this is a ternary operator to make signin appear until the state is changed*/}
+        <Navigation onRouteChange={this.onRouteChange} />
         { this.state.route === 'signin' 
-          ? <Signin />
+          ? <Signin onRouteChange={this.onRouteChange} />
           : <div> 
               <Logo />
               <Rank />
