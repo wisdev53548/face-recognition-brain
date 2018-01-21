@@ -73,6 +73,7 @@ class App extends Component {
           params={particlesOptions}
         />*/}
         <Navigation />
+        {/*this is a ternary operator to make signin appear until the state is changed*/}
         { this.state.route === 'signin' 
           ? <Signin />
           : <div> 
